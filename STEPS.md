@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=DMplRZtfpBY&t=3680s
+
 pnpm i
 pnpm run start:dev
 

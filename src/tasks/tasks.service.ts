@@ -10,7 +10,7 @@ export class TasksService {
   constructor(@InjectModel(Task.name) private taskModel: Model<Task>) {}
 
   async findAll() {
-    await this.taskModel.find();
+    return await this.taskModel.find();
   }
   async findOne(id: string) {
     return await this.taskModel.findById(id);
@@ -22,7 +22,9 @@ export class TasksService {
   }
 
   async update(id: string, updateTask: UpdateTaskDto) {
-    return await this.taskModel.findByIdAndUpdate(id, updateTask);
+    return await this.taskModel.findByIdAndUpdate(id, updateTask, {
+      new: true,
+    });
   }
 
   async delete(id: string) {
