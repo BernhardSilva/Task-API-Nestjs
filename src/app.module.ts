@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TasksModule } from './tasks/tasks.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -11,7 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       'mongodb+srv://bernhardsilva:J4KX35m4TkfRrvEf@cluster0.d1msdta.mongodb.net/task-api',
     ),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
